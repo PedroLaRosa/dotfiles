@@ -1,0 +1,44 @@
+[core]
+	excludesfile = ~/.gitignore
+	editor = nvim
+  ignorecase = false
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
+[user]
+	name = Pedro La Rosa D.
+	email = pedrolarosad@gmail.com
+
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  grep = auto
+  ui = auto
+
+[push]
+	autoSetupRemote = true
+	followTags = true
+  default = simple
+
+[init]
+	defaultBranc = main
+
+[github]
+	user = luigi055
+
+[diff]
+  tool = nvimdiff
+
+[difftool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
