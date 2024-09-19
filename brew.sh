@@ -34,6 +34,7 @@ brew install thefuck
 
 # Install neovim and LazyVim Dependencies
 brew install neovim
+brew install rust-analyzer
 brew install grep
 brew install fish
 brew install —cask julia
