@@ -54,5 +54,9 @@ brew install screen
 brew install git
 brew install tree
 
+# MacOS Tool bar
+brew install --cask hot
+brew install --cask rectangle
+
 # Remove outdated versions from the cellar.
 brew cleanup
