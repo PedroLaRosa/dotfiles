@@ -10,6 +10,19 @@ return {
     }
   end,
 
+  -- Deactivate the default mappings
+  -- to set mini.files as default filetree
+  keys = {
+    {
+      "<leader>e",
+      false,
+    },
+    {
+      "<leader>E",
+      false,
+    },
+  },
+
   opts = {
     close_if_last_window = true,
     window = { position = "right" },
