@@ -5,6 +5,34 @@ return {
     event = "BufReadPre",
     opts = {},
   },
+  -- LazyGit integration with Telescope
+  {
+    "kdheepak/lazygit.nvim",
+    keys = {
+      {
+        ";c",
+        ":LazyGit<Return>",
+        desc = "Open LazyGit",
+        silent = true,
+        noremap = true,
+      },
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+  {
+    -- Remove behavior for ; and , keys to assign them to Telescope
+    "folke/flash.nvim",
+    opts = {
+      modes = {
+        char = {
+          keys = { "f", "F", "t", "T" },
+        },
+      },
+    },
+  },
   {
     "telescope.nvim",
     priority = 1000,
@@ -34,14 +62,6 @@ return {
           builtin.live_grep()
         end,
         desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
-      },
-      {
-        "\\\\",
-        function()
-          local builtin = require("telescope.builtin")
-          builtin.buffers()
-        end,
-        desc = "Lists open buffers",
       },
       {
         ";;",
@@ -95,17 +115,7 @@ return {
       local actions = require("telescope.actions")
       local fb_actions = require("telescope").extensions.file_browser.actions
 
-      -- opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
-      --   wrap_results = true,
-      --   layout_strategy = "horizontal",
-      --   layout_config = { prompt_position = "top" },
-      --   sorting_strategy = "ascending",
-      --   winblend = 0,
-      --   mappings = {
-      --     n = {},
-      --   },
-      -- })
-      opts.defaults =  {
+      opts.defaults = {
         wrap_results = true,
         layout_strategy = "horizontal",
         layout_config = { prompt_position = "top" },
@@ -155,4 +165,3 @@ return {
     end,
   },
 }
-
