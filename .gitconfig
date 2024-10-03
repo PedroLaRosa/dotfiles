@@ -35,6 +35,10 @@
 [diff]
   tool = nvimdiff
 
+[merge]
+  tool = vimdiff
+  conflictstyle = zdiff3
+
 [difftool "nvimdiff"]
 	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
 	path = 
