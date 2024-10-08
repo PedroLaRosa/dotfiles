@@ -23,6 +23,9 @@ brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
 
+# Install kitty
+brew install --cask kitty
+
 # Install Exa
 brew install exa
 
