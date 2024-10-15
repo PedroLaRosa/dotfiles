@@ -26,8 +26,11 @@ brew install gnu-sed --with-default-names
 # Install kitty
 brew install --cask kitty
 
-# Install Exa
-brew install exa
+# CLI Improved tools
+brew install eza # Better ls
+brew install bat # Better cat
+brew install tree
+brew install dust # Better du
 
 # Install tmux to manage terminal sessions
 brew install tmux
@@ -55,7 +58,6 @@ brew install screen
 
 # Install git
 brew install git
-brew install tree
 
 # MacOS Tool bar
 brew install --cask hot
