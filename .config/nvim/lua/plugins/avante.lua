@@ -4,6 +4,11 @@ return {
   lazy = false,
   version = false, -- set this if you want to always pull the latest change
   opts = {
+    provider = "claude",
+    claude = {
+      api_key_name = "cmd:echo $ANTHROPIC-API-KEY", -- the shell command must prefixed with `^cmd:(.*)`
+      -- api_key_name = {"bw","get","notes","anthropic-api-key"}, -- if it is a table of string, then default to command.
+    },
     -- add any opts here
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
