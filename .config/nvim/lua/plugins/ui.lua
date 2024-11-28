@@ -1,10 +1,4 @@
 return {
-
-  {
-    "nvimdev/dashboard-nvim",
-    enabled = false,
-  },
-  -- messages, cmdline and the popupmenu
   {
     "folke/noice.nvim",
     opts = function(_, opts)
