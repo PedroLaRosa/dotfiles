@@ -51,6 +51,8 @@ brew install go
 brew install rust
 brew install lua
 brew install lazygit
+# Needed for Obsidian.nvim
+brew install pngpaste
 
 brew install fzf
 brew install openssh
