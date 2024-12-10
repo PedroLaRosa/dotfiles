@@ -7,6 +7,53 @@ return {
     -- Optional, but highly recommended if you want to use the "Default" timer
     "rcarriga/nvim-notify",
   },
+  keys = {
+    {
+      "<leader>tq",
+      "<cmd>TimerStart 1m quick_task<cr>",
+      desc = "Pomodoro work Start",
+    },
+    {
+      "<leader>tw",
+      "<cmd>TimerStart 15m work<cr>",
+      desc = "Pomodoro work Start",
+    },
+    {
+      "<leader>tb",
+      "<cmd>TimerStart 5m Short Break<cr>",
+      desc = "Pomodoro break Start",
+    },
+    {
+      "<leader>tS",
+      "<cmd>TimerStop<cr>",
+      desc = "Pomodoro stop latest timer",
+    },
+    {
+      "<leader>th",
+      "<cmd>TimerHide<cr>",
+      desc = "Pomodoro Hide",
+    },
+    {
+      "<leader>ts",
+      "<cmd>TimerHide<cr>",
+      desc = "Pomodoro show",
+    },
+    {
+      "<leader>tp",
+      "<cmd>TimerPause<cr>",
+      desc = "Pomodoro Pause latest timer",
+    },
+    {
+      "<leader>tr",
+      "<cmd>TimerResume<cr>",
+      desc = "Pomodoro Resume",
+    },
+    {
+      "<leader>tt",
+      "<cmd>TimerSession<cr>",
+      desc = "Pomodoro start session",
+    },
+  },
   opts = {
     --- How often the notifiers are updated.
     update_interval = 1000,
