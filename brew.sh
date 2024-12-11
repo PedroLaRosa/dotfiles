@@ -38,6 +38,9 @@ brew install tmux
 # Install thefuck to fix command errors
 brew install thefuck
 
+# Install Docker
+brew install docker
+
 # Install neovim and LazyVim Dependencies
 brew install neovim
 brew install rust-analyzer
@@ -51,6 +54,7 @@ brew install go
 brew install rust
 brew install lua
 brew install lazygit
+brew install lazydocker
 # Needed for Obsidian.nvim
 brew install pngpaste
 
