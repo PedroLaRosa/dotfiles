@@ -2,6 +2,7 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
+      preset = "classic",
       spec = {
         { ";n", group = "npm package", icon = { icon = "", color = "yellow" } },
       },
