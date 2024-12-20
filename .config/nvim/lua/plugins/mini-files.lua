@@ -3,6 +3,7 @@ return {
   opts = {
     windows = {
       width_preview = 100,
+      preview = true,
     },
   },
   keys = {

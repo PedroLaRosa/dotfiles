@@ -1,10 +1,4 @@
 return {
-  -- Hihglight colors
-  {
-    "echasnovski/mini.hipatterns",
-    event = "BufReadPre",
-    opts = {},
-  },
   -- LazyGit integration with Telescope
   {
     "kdheepak/lazygit.nvim",
@@ -23,7 +17,7 @@ return {
     },
   },
   {
-    -- Remove behavior for ; and , keys to assign them to Telescope
+    -- Remove behavior for ; and , keys to assign them to telescope
     "folke/flash.nvim",
     opts = {
       modes = {
