@@ -3,6 +3,20 @@ local opts = { noremap = true, silent = true }
 
 keymap.set("n", "x", '"_x')
 
+-- Add empty lines before and after cursor line
+keymap.set(
+  "n",
+  "gO",
+  "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>",
+  { desc = "Add an empty line above the cursor line" }
+)
+keymap.set(
+  "n",
+  "go",
+  "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>",
+  { desc = "Add an empty line below the cursor line" }
+)
+
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
