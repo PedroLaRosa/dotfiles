@@ -16,13 +16,13 @@ keymap.set(
   { desc = "Add an empty line below the cursor line" }
 )
 -- Copy relative path (src/foo.txt)
-keymap.set("n", "yp", ':let @*=expand("%")<Return>', { desc = "Copy current file relative path to clipboard" })
+keymap.set("n", ";yp", ':let @*=expand("%")<Return>', { desc = "Copy current file relative path to clipboard" })
 -- Copy absolute path (/something/src/foo.txt)
-keymap.set("n", "yP", ':let @*=expand("%:p")<Return>', { desc = "Copy current absolute path to clipboard" })
+keymap.set("n", ";yP", ':let @*=expand("%:p")<Return>', { desc = "Copy current absolute path to clipboard" })
 -- Copy filename (foo.txt)
-keymap.set("n", "yd", ':let @*=expand("%:t")<Return>', { desc = "Copy current file name to clipboard" })
+keymap.set("n", ";yd", ':let @*=expand("%:t")<Return>', { desc = "Copy current file name to clipboard" })
 -- Copy directory name (/something/src)
-keymap.set("n", "yD", ':let @*=expand("%:p:h")<Return>', { desc = "Copy current directory name to clipboard" })
+keymap.set("n", ";yD", ':let @*=expand("%:p:h")<Return>', { desc = "Copy current directory name to clipboard" })
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
