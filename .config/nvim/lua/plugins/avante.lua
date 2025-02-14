@@ -6,6 +6,10 @@ return {
   opts = {
     provider = "claude",
     claude = {
+      endpoint = "https://api.anthropic.com",
+      model = "claude-3-5-sonnet-20241022",
+      temperature = 0,
+      max_tokens = 4096,
       api_key_name = "cmd:echo $ANTHROPIC-API-KEY", -- the shell command must prefixed with `^cmd:(.*)`
       -- api_key_name = {"bw","get","notes","anthropic-api-key"}, -- if it is a table of string, then default to command.
     },
