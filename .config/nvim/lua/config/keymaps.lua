@@ -2,19 +2,7 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 keymap.set("n", "x", '"_x')
--- Add empty lines before and after cursor line
-keymap.set(
-  "n",
-  "gO",
-  "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>",
-  { desc = "Add an empty line above the cursor line" }
-)
-keymap.set(
-  "n",
-  "go",
-  "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>",
-  { desc = "Add an empty line below the cursor line" }
-)
+
 -- Copy relative path (src/foo.txt)
 keymap.set("n", ";yp", ':let @*=expand("%")<Return>', { desc = "Copy current file relative path to clipboard" })
 -- Copy absolute path (/something/src/foo.txt)
@@ -23,6 +11,7 @@ keymap.set("n", ";yP", ':let @*=expand("%:p")<Return>', { desc = "Copy current a
 keymap.set("n", ";yd", ':let @*=expand("%:t")<Return>', { desc = "Copy current file name to clipboard" })
 -- Copy directory name (/something/src)
 keymap.set("n", ";yD", ':let @*=expand("%:p:h")<Return>', { desc = "Copy current directory name to clipboard" })
+
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
@@ -50,12 +39,6 @@ keymap.set("n", "sh", "<C-w>h")
 keymap.set("n", "sk", "<C-w>k")
 keymap.set("n", "sj", "<C-w>j")
 keymap.set("n", "sl", "<C-w>l")
-
--- Resize window
-keymap.set("n", "<C-S-h>", "<C-w><")
-keymap.set("n", "<C-S-l>", "<C-w>>")
-keymap.set("n", "<C-S-k>", "<C-w>+")
-keymap.set("n", "<C-S-j>", "<C-w>-")
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function()

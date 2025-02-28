@@ -1,5 +1,4 @@
 return {
-  -- LazyGit integration with Telescope
   {
     "kdheepak/lazygit.nvim",
     keys = {
