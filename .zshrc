@@ -1,8 +1,8 @@
-# GEt secrets
-source ~/.secrets.sh
-
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+# GEt secrets
+# source ~/.secrets.sh
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -20,7 +20,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -130,9 +130,6 @@ eval "$(pyenv init -)"
 # bare git repo with my config
 alias config="/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}"
 
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-
 # pnpm
 export PNPM_HOME="${HOME}Library/pnpm"
 case ":$PATH:" in
@@ -142,3 +139,6 @@ esac
 # pnpm end
 
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
