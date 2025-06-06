@@ -49,7 +49,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
-# Uncomment the following line to disable auto-setting terminal title.
+# Uncomment the following line to disabl
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
@@ -128,15 +128,17 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 # bare git repo with my config
-alias config='/usr/bin/git --git-dir=/Users/pedrolarosa/.cfg/ --work-tree=/Users/pedrolarosa'
+alias config="/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}"
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 
 # pnpm
-export PNPM_HOME="/Users/pedrolarosa/Library/pnpm"
+export PNPM_HOME="${HOME}Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme

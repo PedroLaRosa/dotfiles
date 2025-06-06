@@ -41,6 +41,9 @@ brew install thefuck
 # Install Docker
 brew install docker
 
+# Instal Node version manager
+brew install nvm
+
 # Install neovim and LazyVim Dependencies
 brew install neovim
 brew install rust-analyzer
@@ -68,6 +71,10 @@ brew install git
 # MacOS Tool bar
 brew install --cask hot
 brew install --cask rectangle
+
+# Oh my zsh
+brew install powerlevel10k
+echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
 # Remove outdated versions from the cellar.
 brew cleanup
