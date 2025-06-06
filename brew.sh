@@ -41,6 +41,9 @@ brew install thefuck
 # Install Docker
 brew install docker
 
+# Install vscode
+brew install --cask visual-studio-code
+
 # Instal Node version manager
 brew install nvm
 # You should create NVM's working directory if it doesn't exist:
