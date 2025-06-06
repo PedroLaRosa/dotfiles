@@ -75,6 +75,9 @@ brew install screen
 # Install git
 brew install git
 
+# Install github cli
+brew install gh
+
 # MacOS Tool bar
 brew install --cask hot
 brew install --cask rectangle
