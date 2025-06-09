@@ -74,6 +74,11 @@ brew install rust
 brew install lua
 brew install lazygit
 brew install lazydocker
+brew install luarocks
+brew install hub
+brew install ripgrep
+brew install fd
+brew install ghostscript
 # Needed for Obsidian.nvim
 brew install pngpaste
 
@@ -86,6 +91,9 @@ brew install git
 
 # Install github cli
 brew install gh
+
+# Glances
+brew install glances
 
 # MacOS Tool bar
 brew install --cask hot
