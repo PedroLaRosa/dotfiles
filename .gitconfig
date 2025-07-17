@@ -27,7 +27,7 @@
   default = simple
 
 [init]
-	defaultBranc = main
+	defaultBranch = main
 
 [github]
 	user = luigi055
