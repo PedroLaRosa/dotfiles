@@ -60,6 +60,11 @@ export NVM_DIR="$HOME/.nvm"
 # Install PNPM
 brew install pnpm
 
+# Install PIPX
+brew install pipx
+pipx ensurepath
+sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
+
 # Install neovim and LazyVim Dependencies
 brew install neovim
 brew install rust-analyzer
