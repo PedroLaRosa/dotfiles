@@ -96,6 +96,7 @@ brew install git
 
 # Install github cli
 brew install gh
+gh ext install meiji163/gh-notify
 
 # Install imagemagick; Tools and libraries to manipulate images in many formats
 brew install imagemagick
