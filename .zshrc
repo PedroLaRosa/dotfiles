@@ -140,6 +140,7 @@ esac
 
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-export PATH="$HOME/.local/bin:$PATH"

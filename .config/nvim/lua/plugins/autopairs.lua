@@ -7,7 +7,7 @@ return {
     -- this is equivalent to setup({}) function
   },
   {
-    "echasnovski/mini.pairs",
+    "nvim-mini/mini.pairs",
     enabled = false,
   },
 }
