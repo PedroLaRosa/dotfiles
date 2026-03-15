@@ -94,11 +94,15 @@ brew install screen
 # Install git
 brew install git
 
+##git diffnav
+brew install dlvhdr/formulae/diffnav
+
 # Install github cli
 brew install gh
 gh extension install meiji163/gh-notify
-## github dash
+## github dash and gh enhance
 gh extension install dlvhdr/gh-dash
+gh extension install dlvhdr/gh-enhance
 ## Nerd fonts for gh dash
 brew install --cask font-fira-code-nerd-font
 
