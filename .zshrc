@@ -144,3 +144,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+# OpenClaw Completion
+source "/Users/pedro-la-rosa/.openclaw/completions/openclaw.zsh"
