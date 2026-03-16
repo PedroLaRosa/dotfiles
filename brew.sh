@@ -97,6 +97,9 @@ brew install git
 ##git diffnav
 brew install dlvhdr/formulae/diffnav
 
+## Install worktree (wt)
+brew install worktrunk && wt config shell install
+
 # Install github cli
 brew install gh
 gh extension install meiji163/gh-notify
