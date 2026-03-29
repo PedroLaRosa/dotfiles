@@ -30,7 +30,8 @@ brew install --cask kitty
 brew install eza # Better ls
 brew install bat # Better cat
 brew install tree
-brew install dust # Better du
+brew install dust   # Better du
+brew install zoxide # Better cd
 
 # Install tmux to manage terminal sessions
 brew install tmux
