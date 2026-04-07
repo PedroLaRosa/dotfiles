@@ -125,5 +125,9 @@ brew install --cask amazon-q
 brew install powerlevel10k
 echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
+curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
+echo 'export PATH="$HOME/.local/bin:$PATH"' >>~/.bashrc # or ~/.zshrc
+echo 'export PATH="$HOME/.local/bin:$PATH"' >>~/.zshrc
+
 # Remove outdated versions from the cellar.
 brew cleanup
