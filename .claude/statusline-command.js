@@ -10,6 +10,14 @@ process.stdin.on("end", () => {
   const cost = data.cost?.total_cost_usd || 0;
   const pct = Math.floor(data.context_window?.used_percentage || 0);
   const durationMs = data.cost?.total_duration_ms || 0;
+  const usage = data.context_window?.current_usage || {};
+  const tokens =
+    (usage.input_tokens || 0) +
+    (usage.output_tokens || 0) +
+    (usage.cache_creation_input_tokens || 0) +
+    (usage.cache_read_input_tokens || 0);
+  const tokenStr =
+    tokens >= 1000 ? `${(tokens / 1000).toFixed(1)}k` : `${tokens}`;
 
   const CYAN = "\x1b[36m",
     GREEN = "\x1b[32m",
@@ -34,7 +42,7 @@ process.stdin.on("end", () => {
   } catch {}
 
   console.log(
-    `${CYAN}[${model}]${RESET} ${barColor}${bar}${RESET} ${pct}% ${branch}`,
+    `${CYAN}[${model}]${RESET} ${barColor}${bar}${RESET} ${pct}% (${tokenStr}) ${branch}`,
   );
   console.log(
     cost > 0
