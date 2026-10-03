@@ -120,6 +120,22 @@ export LANG=en_US.UTF-8
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Aimplified commands
+hitl() {
+  case "$1" in
+    commit) claude -p "/commit-this" --model haiku --effort high \
+  --allowedTools "Bash(git *)" "Bash(rtk git *)" "Read" \
+  --settings '{"attribution":{"commit":"","pr":""}}' \
+  --strict-mcp-config --no-session-persistence --max-budget-usd 0.10 ;;
+    test)  echo "HELLO" ;;
+    deploy) ./scripts/deploy.sh "${@:2}" ;;
+    *) echo "Usage: proj {build|test|deploy}" ;;
+  esac
+}
+
+
+alias pls='just --global-justfile'
+
 # add nvm
 source ~/.nvm/nvm.sh
 
@@ -164,3 +180,6 @@ if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+# opencode
+export PATH=/Users/pedro-la-rosa/.opencode/bin:$PATH

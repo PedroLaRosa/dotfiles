@@ -1,0 +1,48 @@
+claude_settings := '{"attribution":{"commit":"","pr":""}}'
+
+# Commit current changes with Claude
+[no-cd]
+commit:
+  claude -p "/commit-this" --model haiku --effort high \
+    --allowedTools "Bash(git *)" "Bash(rtk git *)" "Read" \
+    --settings '{{claude_settings}}' \
+    --strict-mcp-config --no-session-persistence --max-budget-usd 0.10
+
+# Push the branch and open a PR with Claude
+# usage: 
+## $just open-pr "base: develop, this is a draft pr"
+[no-cd]
+open-pr *extra-context:
+  claude -p "/open-pr {{extra-context}}" --model sonnet --effort medium \
+    --allowedTools "Bash(git *)" "Bash(rtk git *)" \
+      "Bash(gh pr create *)" "Bash(gh pr view *)" "Bash(gh repo view *)" \
+      "Read" "Grep" "Glob" \
+    --disallowedTools "Bash(git push --force*)" "Bash(git push -f*)" "Bash(gh pr merge *)" \
+    --settings '{{claude_settings}}' \
+    --strict-mcp-config --no-session-persistence
+
+# Diagnose the latest failed CI run and fix or rerun it
+ci_prompt := 'Find the latest failed CI run on the current branch. Read the logs of its failed jobs and state the root cause in one sentence. If the failure is flaky or external (network, runner, rate limits, third-party service), say so, do not edit any code, and rerun only the failed jobs. Otherwise, apply the smallest code fix that addresses the root cause, leave it uncommitted for review, and do not rerun anything. Finish with three lines: root cause, classification (code, flaky, or external), and what you did.'
+[no-cd]
+check-ci *extra-context:
+  claude -p '{{ci_prompt}} {{extra-context}}' --model sonnet --effort high \
+    --allowedTools \
+      "Bash(gh run list *)" "Bash(gh run view *)" "Bash(gh run rerun *)" \
+      "Bash(gh pr checks *)" \
+      "Bash(git status *)" "Bash(git diff *)" "Bash(git log *)" "Bash(git branch *)" \
+      "Read" "Grep" "Glob" "Edit" \
+    --settings '{{claude_settings}}' \
+    --strict-mcp-config --no-session-persistence --max-budget-usd 1.00
+
+
+# Generate a 5-line standup from recent commits and PRs
+standup_prompt := 'Write my standup for this repo. Cover activity since the previous working day (Friday if today is Monday). Use only my own work: commits authored by me (git config user.email) across all branches, and pull requests I authored or reviewed (gh pr list with --author @me, and --search reviewed-by:@me), including their state and CI status. Write exactly 5 lines using the labels Done, In progress and Blocked, giving more lines to whichever has the most content. Blocked means waiting on review, failing CI, or requested changes; write "Blocked: nothing" if there is none. Print only the 5 lines, with no intro, no headings and no commentary.'
+[no-cd]
+standup:
+  claude -p '{{standup_prompt}}' --model haiku --effort medium \
+   --allowedTools \
+     "Bash(git log *)" "Bash(git config user.email)" "Bash(git branch *)" \
+     "Bash(gh pr list *)" "Bash(gh pr view *)" "Bash(gh pr checks *)" \
+     "Bash(date*)" \
+   --settings '{{claude_settings}}' \
+   --strict-mcp-config --no-session-persistence 
